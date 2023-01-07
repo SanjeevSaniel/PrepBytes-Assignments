@@ -2,6 +2,9 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import "./Home.css";
 
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
 const Home = () => {
   return (
     <div className="home-container">
@@ -61,7 +64,37 @@ const Home = () => {
         <h2>TECH FOR TEENS - A RUBIXE INITIATIVE</h2>
       </div>
 
-      
+      <div className="contact">
+        <div className="contact-inner">
+          <div className="info">
+            <h2>GET IN TOUCH</h2>
+            <p>Please complete the form and we will get back to you.</p>
+          </div>
+          <div className="contact-form">
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  required={true}
+                  type="email"
+                  placeholder="Enter email"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  required={true}
+                  type="password"
+                  placeholder="Password"
+                />
+              </Form.Group>
+              <Button style={{ width: "100%" }} variant="primary" type="submit">
+                Register Now
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

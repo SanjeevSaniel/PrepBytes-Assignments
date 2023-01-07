@@ -29,9 +29,6 @@
   grid-template-rows: auto;
 }
 
-.about-content {
-  /* padding: 0 2rem; */
-}
 
 .about-image {
   box-sizing: border-box;
@@ -52,4 +49,23 @@
 .tech-for-teens {
   background: #e8e9e8;
   padding: 2rem 5rem;
+}
+
+.contact {
+  margin: 5rem 15rem;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 0.5fr 0.7fr;
+  grid-template-rows: auto;
+  border: 1px solid black;
+  padding: 3rem;
+}
+
+.info {
+  text-align: center;
+  border-right: 1px solid grey;
+  margin: 1rem 2rem 1rem 0;
+  padding: 1rem;
 }
