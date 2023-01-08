@@ -1,24 +1,23 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Footer from "../../utilities/Footer/Footer";
 import "./Home.css";
 
 const Home = () => {
-  // const [user, setUser] = useState({ name: "", password: "" });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState(0);
 
-  // const handleChange = (e) => {
-  //   const account = { ...user };
-  //   account[e.target.name] = e.target.value;
-  // };
+  // const [id, setId] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let username = name.current.value;
     console.log("Submitted");
-    // console.log(username);
+    const user = { name, email, mobileNumber };
+    axios.post("http://localhost:5000/register", user).then((response) => {
+      console.log(response.data);
+    });
   };
 
   return (
@@ -86,7 +85,7 @@ const Home = () => {
             <p>Please complete the form and we will get back to you.</p>
           </div>
           <div className="contact-form">
-            <form onSubmit={handleSubmit}>
+            <form method="POST" onSubmit={handleSubmit}>
               <div className="form-group form-style">
                 <label htmlFor="name">Name *</label>
                 <input
