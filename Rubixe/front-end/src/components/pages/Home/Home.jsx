@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import Footer from "../../utilities/Footer/Footer";
 import "./Home.css";
 
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-
 const Home = () => {
+  // const [user, setUser] = useState({ name: "", password: "" });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState(0);
+
+  // const handleChange = (e) => {
+  //   const account = { ...user };
+  //   account[e.target.name] = e.target.value;
+  // };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // let username = name.current.value;
+    console.log("Submitted");
+    // console.log(username);
+  };
+
   return (
     <div className="home-container">
       <div className="banner">
@@ -71,30 +86,47 @@ const Home = () => {
             <p>Please complete the form and we will get back to you.</p>
           </div>
           <div className="contact-form">
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
+            <form onSubmit={handleSubmit}>
+              <div className="form-group form-style">
+                <label htmlFor="name">Name *</label>
+                <input
+                  onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  id="name"
+                  type="text"
+                  className="form-control"
                   required={true}
-                  type="email"
-                  placeholder="Enter email"
                 />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
+              </div>
+              <div className="form-group form-style">
+                <label htmlFor="email">Email *</label>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  id="email"
+                  type="text"
+                  className="form-control"
                   required={true}
-                  type="password"
-                  placeholder="Password"
                 />
-              </Form.Group>
-              <Button style={{ width: "100%" }} variant="primary" type="submit">
+              </div>
+              <div className="form-group form-style">
+                <label htmlFor="phone">Mobile Number *</label>
+                <input
+                  onChange={(e) => setMobileNumber(e.target.value)}
+                  id="phone"
+                  type="tel"
+                  className="form-control"
+                  required={true}
+                />
+              </div>
+              <button className="btn-submit" style={{}} type="submit">
                 Register Now
-              </Button>
-            </Form>
+              </button>
+            </form>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
