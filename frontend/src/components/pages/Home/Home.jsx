@@ -1,25 +1,10 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
+import Register from "../../utilities/Form/Register/Register";
 import Footer from "../../utilities/Footer/Footer";
 import "./Home.css";
 
 const Home = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobileNumber, setMobileNumber] = useState(0);
-
-  // const [id, setId] = useState();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submitted");
-    const user = { name, email, mobileNumber };
-    axios.post("http://localhost:5000/register", user).then((response) => {
-      console.log(response.data);
-    });
-  };
-
   return (
     <div className="home-container">
       <div className="banner">
@@ -85,42 +70,7 @@ const Home = () => {
             <p>Please complete the form and we will get back to you.</p>
           </div>
           <div className="contact-form">
-            <form method="POST" onSubmit={handleSubmit}>
-              <div className="form-group form-style">
-                <label htmlFor="name">Name *</label>
-                <input
-                  onChange={(e) => setName(e.target.value)}
-                  name="name"
-                  id="name"
-                  type="text"
-                  className="form-control"
-                  required={true}
-                />
-              </div>
-              <div className="form-group form-style">
-                <label htmlFor="email">Email *</label>
-                <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  id="email"
-                  type="text"
-                  className="form-control"
-                  required={true}
-                />
-              </div>
-              <div className="form-group form-style">
-                <label htmlFor="phone">Mobile Number *</label>
-                <input
-                  onChange={(e) => setMobileNumber(e.target.value)}
-                  id="phone"
-                  type="tel"
-                  className="form-control"
-                  required={true}
-                />
-              </div>
-              <button className="btn-submit" style={{}} type="submit">
-                Register Now
-              </button>
-            </form>
+            <Register />
           </div>
         </div>
       </div>
