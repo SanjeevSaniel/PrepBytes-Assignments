@@ -72,6 +72,11 @@ const NavBar = () => {
                   CONTACT US
                 </NavLink>
               </Nav.Item>
+              <Nav.Item as="li">
+                <NavLink className="nav-link" to="/login">
+                  <button id="btn-login">Login</button>
+                </NavLink>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>

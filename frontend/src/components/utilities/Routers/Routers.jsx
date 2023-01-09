@@ -9,6 +9,7 @@ import About from "./../../pages/About";
 import Blog from "./../../pages/Blog";
 import Career from "./../../pages/Career";
 import AiInternship from "./../../pages/AiInternship";
+import Login from "../Form/Login/Login";
 
 const Routers = () => {
   return (
@@ -22,6 +23,7 @@ const Routers = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
