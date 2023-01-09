@@ -1,9 +1,5 @@
 {
-<<<<<<<< HEAD:rubixe-front-end/package.json
-  "name": "rubixe-front-end",
-========
   "name": "frontend",
->>>>>>>> d2536fa52d2e353d2e685aef9525165b8da51f75:frontend/package.json
   "version": "0.1.0",
   "private": true,
   "dependencies": {
