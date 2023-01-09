@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const sessionstorage = require("sessionstorage");
 
@@ -24,12 +24,11 @@ function auth(req, res, next) {
     const bearer = header.split(" ");
     const token = bearer[1];
     req.token = token;
-    // return res.status(401).send({ error: "Access-Denied" });
   }
 
   try {
     const tokenVerified = jwt.verify(token, "secret");
-    // req.token = tokenVerified;
+
     console.log("email", tokenVerified);
     next();
   } catch (e) {
@@ -40,25 +39,6 @@ function auth(req, res, next) {
 app.get("/", (req, res) => res.send("Express"));
 
 app.post("/register", (req, res) => {
-  // try {
-  // const salt = await bcrypt.genSalt();
-  // const hashedMobile = await bcrypt.hash(req.body.mobileNumber, salt);
-
-  //   user.push({
-  //     _id: ++lastId,
-  //     stamp: Date(),
-  //     name: req.body.name,
-  //     email: req.body.email,
-  //     mobileNumber: req.body.mobileNumber,
-  //   });
-  //   const accessToken = jwt.sign(email, process.env.ACCESS_TOKEN_SECRET);
-  //   sessionstorage.setItem("token", accessToken);
-  //   console.log(accessToken);
-  //   res.status(201).send(accessToken);
-  // } catch (error) {
-  //   console.log(error);
-  // }
-
   user.push({
     _id: ++lastId,
     stamp: Date(),
@@ -70,21 +50,11 @@ app.post("/register", (req, res) => {
   sessionstorage.setItem("token", accessToken);
   console.log(accessToken);
   res.status(201).send(accessToken);
-
-  // console.log(user[0]);
-
-  // res.status(200).send({ lastId });
 });
 
 app.post("/login", (req, res) => {
   const header = req.headers["authorization"];
   console.log("header", header);
-  // if (typeof header !== "undefined") {
-  //   const bearer = header.split(" ");
-  //   const token = bearer[1];
-  //   accessToken = token;
-  //   return res.status(401).send({ error: "Access-Denied" });
-  // }
 
   try {
     const tokenVerified = jwt.verify(header, "secret");
@@ -96,14 +66,6 @@ app.post("/login", (req, res) => {
   }
 
   console.log("User", user);
-  // if (user[0].email === email && user[0].mobileNumber === mobile) {
-  //   const accessToken = jwt.sign(email, process.env.ACCESS_TOKEN_SECRET);
-  //   sessionstorage.setItem("token", accessToken);
-  //   console.log(accessToken);
-  //   res.status(201).send({ accessToken, message: "User Exists" });
-  // } else {
-  //   res.status(502).send("User not registered.");
-  // }
 });
 
 app.listen(port, console.log("Server is running"));
