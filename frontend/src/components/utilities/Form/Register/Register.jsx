@@ -68,6 +68,11 @@ const Register = () => {
     if (errors) return;
     else {
       doSubmit();
+      setUser({
+        name: "",
+        email: "",
+        mobileNumber: "",
+      });
     }
   };
 
@@ -77,6 +82,7 @@ const Register = () => {
         .post("http://localhost:5000/register", user)
         .then((response) => {
           console.log(response.data);
+          sessionStorage.setItem("token", response.data);
         });
       setSubmit(true);
       console.log("Submitted");
@@ -141,7 +147,7 @@ const Register = () => {
         </div>
         <button
           disabled={validate()}
-          className={validate() ? "btn-submit" : "btn-submit active"}
+          className={validate() ? "btn-submit" : `btn-submit active `}
           type="submit"
         >
           Register Now

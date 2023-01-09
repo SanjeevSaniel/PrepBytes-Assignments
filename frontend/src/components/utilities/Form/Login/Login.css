@@ -9,3 +9,9 @@
   width: 30%;
   box-shadow: 0 0 10px 2px #dde9f6;
 }
+
+.alert-style {
+  position: absolute;
+  top: 1rem;
+  left: 30%;
+}

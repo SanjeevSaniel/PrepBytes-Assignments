@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Joi from "joi-browser";
 import axios from "axios";
 import "./Login.css";
+import { BtnTextContext } from "./../../../../App";
 
 const Login = () => {
+  const [btnText, setBtnText] = useContext(BtnTextContext);
+
   const [loginUser, setLoginUser] = useState({
     email: "",
     mobileNumber: "",
   });
 
   let [errors, setErrors] = useState({});
-  //   const [submit, setSubmit] = useState(false);
 
   const schema = {
     email: Joi.string().email().required().label("Email"),
@@ -68,23 +71,42 @@ const Login = () => {
     }
   };
 
+  let loginResponse = "";
+  const navigate = useNavigate();
   const doSubmit = async () => {
     try {
       await axios
-        .post("http://localhost:5000/login", loginUser)
+        .post("http://localhost:5000/login", loginUser, {
+          headers: {
+            Authorization: sessionStorage.getItem("token"),
+          },
+        })
         .then((response) => {
           console.log(response.data);
+
+          if (response.data === "Success") {
+            loginResponse = response.data;
+            console.log(response.data);
+            navigate("/");
+            setBtnText("Log Out");
+          }
         });
-      //   setSubmit(true);
-      console.log("Submitted");
+
+      console.log("Logged In");
     } catch (er) {
-      if (er.response && er.response.status === 400) {
+      if (er.response && er.response.status === 401) {
         const Errors = { ...errors };
         Errors.email = er.response.data;
         setErrors(Errors);
+        loginResponse = er.response.data;
       }
     }
+
+    setTimeout(() => {
+      setErrors("");
+    }, 3000);
   };
+
   return (
     <form method="POST" onSubmit={handleSubmit} className="login-form">
       <div className="form-group form-style">
@@ -97,7 +119,6 @@ const Login = () => {
           type="text"
           className={errors.email ? "form-control alert-input" : "form-control"}
         />
-        {errors.email && <div className="alert-style">{errors.email}</div>}
       </div>
 
       <div className="form-group form-style">
@@ -123,6 +144,7 @@ const Login = () => {
       >
         Login
       </button>
+      {errors.email && <div className="alert-style">{errors.email}</div>}
     </form>
   );
 };

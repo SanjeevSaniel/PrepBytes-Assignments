@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Nav } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Logo from "../../../images/white-rubixe-logo.png";
 
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
+import { BtnTextContext } from "./../../../App";
 
 const NavBar = () => {
-  //   let activeStyle = {
-  //     textDecoration: "underline",
-  //   };
+  const [btnText, setBtnText] = useContext(BtnTextContext);
 
-  //   let activeClassName = "underline";
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
+
+  const navigate = useNavigate();
+
+  const doLogout = () => {
+    sessionStorage.clear();
+    navigate("/");
+    setBtnText("Log in");
+    setIsAlertVisible(true);
+
+    setTimeout(() => {
+      setIsAlertVisible(false);
+    }, 3000);
+  };
 
   return (
     <div>
@@ -72,11 +85,27 @@ const NavBar = () => {
                   CONTACT US
                 </NavLink>
               </Nav.Item>
-              <Nav.Item as="li">
-                <NavLink className="nav-link" to="/login">
-                  <button id="btn-login">Login</button>
-                </NavLink>
-              </Nav.Item>
+              {btnText === "Login" ? (
+                <Nav.Item as="li">
+                  <NavLink className="nav-link" to="/login">
+                    <button id="btn-login">{btnText}</button>
+                  </NavLink>
+                </Nav.Item>
+              ) : (
+                <Nav.Item as="li">
+                  <NavLink className="nav-link" to="/">
+                    <button onClick={doLogout} id="btn-login">
+                      {btnText}
+                    </button>
+                  </NavLink>
+                </Nav.Item>
+              )}
+
+              {isAlertVisible && (
+                <div className="alert-container">
+                  <div className="alert-inner">Logged out successfully.</div>
+                </div>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

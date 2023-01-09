@@ -25,6 +25,11 @@
   box-shadow: 0 0 10px 1px grey;
 }
 
+.btn-clicked {
+  display: none;
+  transition: all 0.2s ease-in-out;
+}
+
 /* .btn-submit.active:hover {
   box-shadow: 0 0 10px 1px grey;
 } */
