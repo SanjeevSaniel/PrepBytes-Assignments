@@ -1,0 +1,41 @@
+.form-inputs {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-flow: column;
+  margin: 1rem;
+}
+
+.btn-calculate {
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  background: #15699a;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.btn-calculate:hover {
+  box-shadow: 0 0 15px 5px grey;
+}
+
+.amortization-data {
+  margin: 2rem auto;
+  border: 1px solid grey;
+  border-spacing: 0;
+}
+
+thead {
+  color: white;
+  background-color: brown;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid grey;
+}
