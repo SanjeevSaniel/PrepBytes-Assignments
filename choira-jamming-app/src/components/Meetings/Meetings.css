@@ -92,7 +92,8 @@
   cursor: pointer;
 }
 
-.host {
+.host,
+.host-2 {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -103,6 +104,13 @@
   background: #f1b103;
   z-index: 2;
   color: #000000;
+  border-top-left-radius: 5px;
+}
+
+.host-2 {
+  top: 5px;
+  left: 5px;
+  border-top-left-radius: 5px;
 }
 
 .video-container,

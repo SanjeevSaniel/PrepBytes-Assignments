@@ -128,7 +128,7 @@ const Meetings = () => {
                   className={`video-container-3 meetings-${index} vc-${index}`}
                 >
                   {index === 0 ? (
-                    <span className="host">
+                    <span className="host-2">
                       Host <span class="material-symbols-outlined">stars</span>
                     </span>
                   ) : (
@@ -157,7 +157,7 @@ const Meetings = () => {
               return (
                 <div className={`video-container-4 vc-${index}`}>
                   {index === 0 ? (
-                    <span className="host">
+                    <span className="host-2">
                       Host <span class="material-symbols-outlined">stars</span>
                     </span>
                   ) : (
