@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Meetings.css";
-import pexels from "../../assets/videos/pexels-cottonbro-10678930.mp4";
 import videoOne from "../../assets/videos/production ID_4099022.mp4";
 import videoTwo from "../../assets/videos/production ID_4393393.mp4";
 import videoThree from "../../assets/videos/production ID_4434831.mp4";
@@ -9,69 +8,12 @@ import mic from "../../assets/images/mic.png";
 
 const Meetings = () => {
   const [visible, setVisible] = useState(false);
-  //   const [count, setCount] = useState(1);
   const [items, setItems] = useState([videoOne]);
-
-  //   const [layout, setLayout] = useState("");
-  const layoutOne = {
-    gridTemplateColumns: "1fr",
-  };
-
-  //   const videoStyle = {
-  //     width: "100%",
-  //     };
-
-  const layout = (items) => {
-    if (items.length === 1) {
-      return {
-        gridTemplateColumns: "1fr",
-      };
-    } else if (items.length === 2) {
-      return {
-        gridTemplateColumns: "1fr 1fr",
-      };
-    }
-  };
-
-  const videoStyle = (items) => {
-    if (items.length === 1) {
-      return {
-        width: "100%",
-      };
-    } else if (items.length === 2) {
-      return {
-        width: "50%",
-      };
-    }
-  };
-
-  //   useEffect(() => {
-  //     layout(items);
-  //     videoStyle(items);
-  //   }, [items]);
-
-  //   const gridLayout = (items) => {
-  //     switch (items.length) {
-  //       case 1:
-  //         setLayout({
-  //           gridTemplateColumns: "1fr",
-  //           maxWidth: " 90%",
-  //           height: "80%",
-  //           padding: "20px",
-  //         });
-  //         break;
-
-  //       default:
-  //         break;
-  //     }
-  //   };
 
   const videos = [videoOne, videoTwo, videoThree, videoFour];
 
   const handleSelection = (count) => {
     setItems(videos.slice(0, count));
-    // layout(items);
-    // videoStyle(items);
   };
 
   return (
