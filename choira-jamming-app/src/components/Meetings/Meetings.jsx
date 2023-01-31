@@ -171,13 +171,7 @@ const Meetings = () => {
             {items.map((item) => {
               return (
                 <div className="video-container">
-                  <video
-                    className="meetings--video-2"
-                    // style={{ width: "200%", height: "50%" }}
-                    autoPlay
-                    loop
-                    muted
-                  >
+                  <video className="meetings--video-2" autoPlay loop muted>
                     <source src={item} type="video/mp4" />
                   </video>
                 </div>
@@ -190,22 +184,16 @@ const Meetings = () => {
 
         {items.length === 3 ? (
           <div
-            className="meetings__grid-container .meetings-3"
+            className="meetings__grid-container-3"
             style={{
               gridTemplateColumns: "1fr 1fr",
               gridTemplateRows: "1fr 1fr",
             }}
           >
-            {items.map((item) => {
+            {items.map((item, index) => {
               return (
-                <div className="video-container">
-                  <video
-                    className="meetings--video-3"
-                    // style={{ width: "100%" }}
-                    autoPlay
-                    loop
-                    muted
-                  >
+                <div className={`video-container-3 meetings-${index}`}>
+                  <video className="meetings--video-3" autoPlay loop muted>
                     <source src={item} type="video/mp4" />
                   </video>
                 </div>
@@ -218,7 +206,7 @@ const Meetings = () => {
 
         {items.length === 4 ? (
           <div
-            className={`meetings__grid-container`}
+            className="meetings__grid-container-4"
             style={{
               gridTemplateColumns: "1fr 1fr",
               gridTemplateRows: "1fr 1fr",
@@ -226,7 +214,7 @@ const Meetings = () => {
           >
             {items.map((item) => {
               return (
-                <div className="video-container">
+                <div className="video-container-4">
                   <video
                     className="meetings--video-4"
                     // style={{ width: "100%" }}
