@@ -229,11 +229,23 @@
   border: none;
   color: #ffffff;
   border-radius: 5px;
-  padding: 6px 10px;
+  padding: 3px 10px;
 }
 
 .mic {
   padding: 1px 10px;
+}
+
+.utilities {
+  cursor: pointer;
+  color: #ffffff;
+  margin: 5px 10px;
+  padding: 5px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+.material-symbols-outlined {
+  padding-top: 5px;
 }
 
 @media screen and (max-width: 1000px) {

@@ -168,8 +168,20 @@ const Meetings = () => {
           </div>
           <div className="meetings__footer-two">
             <button className="btn-end">End Jam</button>
-            <div className="mic">
-              <img src={mic} alt="" />
+            <div className="mic utilities">
+              {/* <img src={mic} alt="" /> */}
+              <span className="material-symbols-outlined">mic</span>
+            </div>
+            <div className="mic utilities">
+              {/* <img src={mic} alt="" /> */}
+              <span className="material-symbols-outlined">videocam</span>
+            </div>
+            <div className="mic utilities">
+              <span className="material-symbols-outlined">volume_up</span>
+              {/* <img src={mic} alt="" /> */}
+            </div>
+            <div className="mic utilities">
+              <span className="material-symbols-outlined">more_horiz</span>
             </div>
           </div>
         </footer>
