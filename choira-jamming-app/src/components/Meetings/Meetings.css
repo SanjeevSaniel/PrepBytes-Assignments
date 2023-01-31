@@ -238,17 +238,17 @@
 
 @media screen and (max-width: 1000px) {
   .meetings__grid-container {
-    margin: 5rem auto;
+    margin: 2rem auto;
     max-width: 90%;
   }
 
   .meetings__grid-container-3 {
-    margin: 5rem auto;
+    margin: 2rem auto;
     max-width: 90%;
   }
 
   .meetings__grid-container-4 {
-    margin: 5rem auto;
+    margin: 2rem auto;
     max-width: 90%;
   }
 }
