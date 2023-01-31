@@ -4,8 +4,8 @@
 
 .meetings__container {
   background: #21242b;
-  width: 100%;
-  height: 95vh;
+  width: 100vw;
+  height: 100vh;
   /* position: relative; */
 }
 
@@ -99,6 +99,10 @@
   justify-content: center;
   align-items: center;
   overflow: clip;
+}
+
+.video-container {
+  max-width: fit-content;
 }
 
 .video-container-2 {
@@ -230,4 +234,21 @@
 
 .mic {
   padding: 1px 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .meetings__grid-container {
+    margin: 5rem auto;
+    max-width: 90%;
+  }
+
+  .meetings__grid-container-3 {
+    margin: 5rem auto;
+    max-width: 90%;
+  }
+
+  .meetings__grid-container-4 {
+    margin: 5rem auto;
+    max-width: 90%;
+  }
 }

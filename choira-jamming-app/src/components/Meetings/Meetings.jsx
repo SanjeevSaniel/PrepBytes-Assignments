@@ -18,7 +18,6 @@ const Meetings = () => {
 
   return (
     <main className="main-container">
-      <h4>CoJam</h4>
       <section className="meetings__container">
         <header className="meetings__header">
           <img
@@ -56,29 +55,6 @@ const Meetings = () => {
 
           <div></div>
         </aside>
-
-        {/* <div
-          className={`meetings__grid-container`}
-          style={{ ...layout }}
-          //   style={items.length === 1 ? { ...layoutOne } : ""}
-        >
-          {items.map((item) => {
-            return (
-              <div className="video-container">
-                <video
-                  className="meetings--video"
-                  style={{ ...videoStyle }}
-                  //   style={items.length === 1 ? { ...videoStyle } : ""}
-                  autoPlay
-                  loop
-                  muted
-                >
-                  <source src={item} type="video/mp4" />
-                </video>
-              </div>
-            );
-          })}
-        </div> */}
 
         {items.length === 1 ? (
           <div
@@ -157,13 +133,7 @@ const Meetings = () => {
             {items.map((item) => {
               return (
                 <div className="video-container-4">
-                  <video
-                    className="meetings--video-4"
-                    // style={{ width: "100%" }}
-                    autoPlay
-                    loop
-                    muted
-                  >
+                  <video className="meetings--video-4" autoPlay loop muted>
                     <source src={item} type="video/mp4" />
                   </video>
                 </div>
