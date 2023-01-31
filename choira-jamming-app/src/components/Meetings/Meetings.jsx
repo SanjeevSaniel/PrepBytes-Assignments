@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Meetings.css";
-import videoOne from "../../assets/videos/production ID_4099022.mp4";
+import videoOne from "../../assets/videos/production ID_3772427.mp4";
+// import videoOne from "../../assets/videos/production ID_4099022.mp4";
 import videoTwo from "../../assets/videos/production ID_4393393.mp4";
 import videoThree from "../../assets/videos/production ID_4434831.mp4";
 import videoFour from "../../assets/videos/production ID_4629085.mp4";
-import mic from "../../assets/images/mic.png";
+// import mic from "../../assets/images/mic.png";
 
 const Meetings = () => {
   const [visible, setVisible] = useState(false);
