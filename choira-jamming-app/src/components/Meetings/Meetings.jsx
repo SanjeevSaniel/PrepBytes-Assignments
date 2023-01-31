@@ -61,9 +61,16 @@ const Meetings = () => {
             className={`meetings__grid-container`}
             style={{ gridTemplateColumns: "1fr" }}
           >
-            {items.map((item) => {
+            {items.map((item, index) => {
               return (
-                <div className="video-container">
+                <div className={`video-container vc-${index}`}>
+                  {index === 0 ? (
+                    <span className="host">
+                      Host <span class="material-symbols-outlined">stars</span>
+                    </span>
+                  ) : (
+                    ""
+                  )}
                   <video
                     className="meetings--video"
                     style={{ width: "100%" }}
@@ -86,9 +93,16 @@ const Meetings = () => {
             className={`meetings__grid-container`}
             style={{ gridTemplateColumns: "1fr 1fr" }}
           >
-            {items.map((item) => {
+            {items.map((item, index) => {
               return (
-                <div className="video-container">
+                <div className={`video-container vc-${index}`}>
+                  {index === 0 ? (
+                    <span className="host">
+                      Host <span class="material-symbols-outlined">stars</span>
+                    </span>
+                  ) : (
+                    ""
+                  )}
                   <video className="meetings--video-2" autoPlay loop muted>
                     <source src={item} type="video/mp4" />
                   </video>
@@ -110,7 +124,16 @@ const Meetings = () => {
           >
             {items.map((item, index) => {
               return (
-                <div className={`video-container-3 meetings-${index}`}>
+                <div
+                  className={`video-container-3 meetings-${index} vc-${index}`}
+                >
+                  {index === 0 ? (
+                    <span className="host">
+                      Host <span class="material-symbols-outlined">stars</span>
+                    </span>
+                  ) : (
+                    ""
+                  )}
                   <video className="meetings--video-3" autoPlay loop muted>
                     <source src={item} type="video/mp4" />
                   </video>
@@ -130,9 +153,16 @@ const Meetings = () => {
               gridTemplateRows: "1fr 1fr",
             }}
           >
-            {items.map((item) => {
+            {items.map((item, index) => {
               return (
-                <div className="video-container-4">
+                <div className={`video-container-4 vc-${index}`}>
+                  {index === 0 ? (
+                    <span className="host">
+                      Host <span class="material-symbols-outlined">stars</span>
+                    </span>
+                  ) : (
+                    ""
+                  )}
                   <video className="meetings--video-4" autoPlay loop muted>
                     <source src={item} type="video/mp4" />
                   </video>
