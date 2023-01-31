@@ -1,0 +1,155 @@
+.main-container {
+  position: relative;
+}
+
+.meetings__container {
+  background: #21242b;
+  width: 100%;
+  height: 95vh;
+  /* position: relative; */
+}
+
+.meetings__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.meetings__logo {
+  width: 6rem;
+  margin: 15px;
+}
+
+.meetings-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.meetings__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.meetings__actions button {
+  margin: 5px;
+  background: transparent;
+  border: 2px solid rgb(77, 77, 77);
+}
+
+.grid-count {
+  /* display: none; */
+  position: absolute;
+  right: 7%;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.grid-count li {
+  padding: 5px 10px;
+}
+
+.grid-count li:hover {
+  background: #575757;
+}
+
+.btn-grids {
+  color: #ffffff;
+  /* width: 2rem;
+  height: 2rem; */
+  padding: 2px 15px;
+  border-radius: 5px;
+}
+
+.btn-invite {
+  color: #f1b103;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.meetings__grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  /* max-width: 85%; */
+  max-width: 90%;
+  height: 80%;
+  padding: 20px;
+  box-sizing: border-box;
+  /* height: 50%; */
+}
+
+.meetings__sidebar {
+  position: fixed;
+  left: 0;
+  padding: 10px 10px 10px 0;
+  display: flex;
+  flex-flow: column;
+}
+
+.camera {
+  color: #f1b103;
+  border-left: 2px solid #f1b103;
+}
+
+.meetings__sidebar span {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.meetings--video {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  max-width: 80%;
+  /* max-height: 100%; */
+  border-radius: 15px;
+}
+
+.meetings__footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.meetings__footer-one ul {
+  display: flex;
+  flex-flow: row;
+  margin: 0;
+  padding: 0;
+}
+
+.meetings__footer-one ul li {
+  color: #9b9b9b;
+  list-style-type: none;
+  text-align: center;
+  max-width: 5rem;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+.record {
+  border: none;
+}
+
+.meetings__footer-two {
+  display: flex;
+  flex-flow: row;
+}
+
+.btn-end {
+  background: #dc354b;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+
+.mic {
+  /* margin: auto; */
+  padding: 1px 10px;
+  /* width: 14px;
+  height: 12px; */
+}
