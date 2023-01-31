@@ -79,7 +79,7 @@ const Register = () => {
   const doSubmit = async () => {
     try {
       await axios
-        .post("http://localhost:5000/register", user)
+        .post("https://cute-tan-bat-cap.cyclic.app/register", user)
         .then((response) => {
           console.log(response.data);
           sessionStorage.setItem("token", response.data);

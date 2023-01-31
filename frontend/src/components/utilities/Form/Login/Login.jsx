@@ -76,7 +76,7 @@ const Login = () => {
   const doSubmit = async () => {
     try {
       await axios
-        .post("http://localhost:5000/login", loginUser, {
+        .post("https://cute-tan-bat-cap.cyclic.app/login", loginUser, {
           headers: {
             Authorization: sessionStorage.getItem("token"),
           },
