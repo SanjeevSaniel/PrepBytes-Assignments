@@ -36,7 +36,6 @@ const Articles = ({ articles }) => {
               <Card.Img
                 variant="top"
                 src={article.image}
-                // style={{ height: "135px" }}
                 className="card-image"
               />
               <Card.Body>

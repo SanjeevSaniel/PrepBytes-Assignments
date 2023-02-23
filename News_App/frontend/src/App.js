@@ -70,45 +70,15 @@ function App() {
       console.log("New", result);
     }
 
-    setArticles(result.sort((a, b) => (a.status < b.status ? -1 : 1)));
+    setArticles(
+      result
+        .sort((a, b) => (a.publishedAt > b.publishedAt ? -1 : 1))
+        .sort((a, b) => (a.status < b.status ? -1 : 1))
+    );
   };
 
   useEffect(() => {
     fetchData();
-    // const apiData = require("./api/articles.json");
-    // setArticles(apiData.map((article) => ({ status: "not read", ...article })));
-    // sessionStorage.setItem(
-    //   "articles",
-    //   JSON.stringify(
-    //     apiData.map((article) => ({
-    //       status: "not read",
-    //       ...article,
-    //     }))
-    //   )
-    // );
-    // console.log(articles);
-    // async function fetchNews() {
-    //   const res = await axios.get(
-    //     // "https://newsapi.org/v2/top-headlines?country=in&apiKey=3cd1b623a9be4067a0b90a57edafa70a"
-    //     // "https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=3cd1b623a9be4067a0b90a57edafa70a"
-    //     // "https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=in&max=10&apikey=6567045f6dd1852cd3726a720bf04419"
-    //   );
-    //   setArticles(
-    //     res.data.articles.map((article, index) => ({
-    //       read: false,
-    //       _id: index,
-    //       ...article,
-    //     }))
-    //   );
-    //   console.log(
-    //     res.data.articles.map((article, index) => ({
-    //       read: false,
-    //       _id: index,
-    //       ...article,
-    //     }))
-    //   );
-    // }
-    // fetchNews();
   }, []);
 
   return (
