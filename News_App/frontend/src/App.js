@@ -70,9 +70,7 @@ function App() {
       console.log("New", result);
     }
 
-    setArticles(
-      result.sort((a, b) => (a.publishedAt > b.publishedAt ? -1 : 1))
-    );
+    setArticles(result.sort((a, b) => (a.status < b.status ? -1 : 1)));
   };
 
   useEffect(() => {

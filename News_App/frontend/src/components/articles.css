@@ -8,14 +8,23 @@
 }
 
 .card {
-  transition: all 0.3s;
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
+  transition: all 0.5s;
 }
 
 .card:hover {
   box-shadow: 0 0 20px 5px rgb(181, 181, 181);
+}
+
+.card-border {
+  border: 2px solid #083ce7c7;
+  border-radius: 6px;
+}
+
+.card-border:hover {
+  box-shadow: 0 0 20px 5px #5475e0c7;
 }
 
 .badge {
@@ -36,4 +45,14 @@
 
 .card-description {
   -webkit-line-clamp: 3;
+}
+
+.card-image {
+  height: 135px;
+}
+
+@media screen and (max-width: 900px) {
+  .card-image {
+    height: fit-content;
+  }
 }

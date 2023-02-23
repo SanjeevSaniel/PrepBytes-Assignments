@@ -23,7 +23,10 @@ const Articles = ({ articles }) => {
       {/* {Array.from({ length: 7 }).map((_, idx) => (  //? Testing */}
       {articles.map((article, index) => (
         <Link key={index} to={`/${article.source.id}`} className="links">
-          <Col onClick={() => handleClick(article)}>
+          <Col
+            onClick={() => handleClick(article)}
+            className={article.status === "read" ? "" : "card-border"}
+          >
             <Card className="card">
               {article.status === "not read" ? (
                 <span className="badge">New</span>
@@ -33,7 +36,8 @@ const Articles = ({ articles }) => {
               <Card.Img
                 variant="top"
                 src={article.image}
-                style={{ height: "135px" }}
+                // style={{ height: "135px" }}
+                className="card-image"
               />
               <Card.Body>
                 <Card.Text>{formatDate(article.publishedAt)}</Card.Text>
