@@ -1,0 +1,86 @@
+import React, { useContext } from "react";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import "./articles.css";
+import { Link } from "react-router-dom";
+import { APIContext } from "./../App";
+
+const Articles = ({ articles }) => {
+  const { monthNames, handleClick } = useContext(APIContext);
+
+  function formatDate(publishedDate) {
+    const date = publishedDate.slice(0, 10);
+    const month = date.slice(5, 8).startsWith(0)
+      ? date.slice(2, 3)
+      : date.slice(5, 7);
+
+    return `${monthNames[month - 1]} ${date.slice(-2)}, ${date.slice(0, 4)}`;
+  }
+
+  //   const handleClick = (article) => {
+  //     console.log(article);
+
+  //     const data = JSON.parse(sessionStorage.getItem("articles"));
+  //     const resultRead = data.filter((d) => d.source.id === article.source.id);
+  //     resultRead[0].status = "read";
+  //     console.log(resultRead);
+
+  //     const resultNotRead = data.filter((d) => d.source.id !== article.source.id);
+  //     const updatedArticles = [...resultNotRead, ...resultRead];
+  //     console.log(updatedArticles);
+  //     sessionStorage.setItem("articles", JSON.stringify(updatedArticles));
+  //   };
+
+  return (
+    <Row xs={1} md={3} lg={5} className="g-4">
+      {/* {Array.from({ length: 7 }).map((_, idx) => (  //? Testing */}
+      {articles.map((article, index) => (
+        <Link key={index} to={`/${article.source.id}`} className="links">
+          <Col onClick={() => handleClick(article)}>
+            <Card className="card">
+              {article.status === "not read" ? (
+                <span className="badge">New</span>
+              ) : (
+                ""
+              )}
+              <Card.Img
+                variant="top"
+                src={article.image}
+                style={{ height: "135px" }}
+              />
+              <Card.Body>
+                <Card.Text>{formatDate(article.publishedAt)}</Card.Text>
+                <Card.Title
+                  className="card-title"
+                  style={{
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {article.title}
+                </Card.Title>
+                <Card.Text
+                  className="card-description"
+                  style={{
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  {article.description}
+                </Card.Text>
+                <Card.Text className="text-muted">
+                  Source: {article.source.name}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Link>
+      ))}
+    </Row>
+  );
+};
+
+export default Articles;

@@ -1,0 +1,39 @@
+.links {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.links:hover {
+  color: rgb(21, 120, 82);
+}
+
+.card {
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px 5px rgb(181, 181, 181);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #083ce7c7;
+}
+
+.card-title,
+.card-description {
+  display: -webkit-box;
+}
+
+.card-title {
+  -webkit-line-clamp: 2;
+}
+
+.card-description {
+  -webkit-line-clamp: 3;
+}
