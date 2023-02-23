@@ -18,20 +18,6 @@ const Articles = ({ articles }) => {
     return `${monthNames[month - 1]} ${date.slice(-2)}, ${date.slice(0, 4)}`;
   }
 
-  //   const handleClick = (article) => {
-  //     console.log(article);
-
-  //     const data = JSON.parse(sessionStorage.getItem("articles"));
-  //     const resultRead = data.filter((d) => d.source.id === article.source.id);
-  //     resultRead[0].status = "read";
-  //     console.log(resultRead);
-
-  //     const resultNotRead = data.filter((d) => d.source.id !== article.source.id);
-  //     const updatedArticles = [...resultNotRead, ...resultRead];
-  //     console.log(updatedArticles);
-  //     sessionStorage.setItem("articles", JSON.stringify(updatedArticles));
-  //   };
-
   return (
     <Row xs={1} md={3} lg={5} className="g-4">
       {/* {Array.from({ length: 7 }).map((_, idx) => (  //? Testing */}
